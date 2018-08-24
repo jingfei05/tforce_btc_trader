@@ -23,12 +23,13 @@ column_renames = {
 }
 
 filenames = {
-    'bitstamp': 'bitstampUSD_1-min_data_2012-01-01_to_2018-03-27',
+    'bitstamp': 'bitstampUSD_1-min_data_2012-01-01_to_2018-06-27',
     'coinbase': 'coinbaseUSD_1-min_data_2014-12-01_to_2018-03-27',
     'coincheck': 'coincheckJPY_1-min_data_2014-10-31_to_2018-03-27'
 }
 
-for k in ['coinbase', 'coincheck', 'bitstamp']:
+#for k in ['coinbase', 'coincheck', 'bitstamp']:
+for k in ['bitstamp']:
     filename = filenames[k]
     df = pd.read_csv(os_path.join(os_path.dirname(__file__), 'bitcoin-historical-data', f'{filename}.csv'))
     df = df.rename(columns=column_renames)
